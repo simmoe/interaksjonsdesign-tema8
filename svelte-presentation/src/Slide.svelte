@@ -11,7 +11,7 @@
         <h2>{@html content.text}</h2>
     {/if}
     {#if content.code}
-        <pre><code>{@html content.code}</code></pre>
+        <pre><code>{content.code}</code></pre>
     {/if}
     {#if content.img}
         <img src={content.img} alt='her er jeg'>
@@ -48,7 +48,11 @@
     }
 
     :global(li){
-        padding:.2rem;
+        padding:.6rem 0 .2rem 0;
+    }
+    :global(script){
+        display:block;
+        color:black;
     }
 	.slide{
 		width:80%;

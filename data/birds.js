@@ -1,7 +1,8 @@
 const Birds = {
     "description": "Birds of Antarctica, grouped by family",
     "source": "https://en.wikipedia.org/wiki/List_of_birds_of_Antarctica",
-    "birds": [{
+    "birds": [
+        {
             "family": "Albatrosses",
             "members": [
                 "Wandering albatross",
