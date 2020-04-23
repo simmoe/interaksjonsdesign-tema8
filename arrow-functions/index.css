@@ -10,5 +10,8 @@ section{
     scroll-snap-align:center;
     scroll-snap-stop:always;
     border: 1px solid white;
-    background-size:cover;
+    background-size:20%;
+    padding-left:25%;
+    background-position: left center;
+    background-repeat: no-repeat;
 }
