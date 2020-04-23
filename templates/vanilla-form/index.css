@@ -15,20 +15,3 @@ main {
     place-items: center;
 }
 
-input, button{
-    font-size: 1.6rem;
-    border-radius: 1rem;
-    outline: none;
-    padding: 1rem;
-    margin: 0 1rem 1rem 0;
-}
-
-input {
-    display: block;
-    min-width: 40vw;
-    border: 1px solid lightgray;
-}
-
-button {
-    min-width: 10vw;
-}

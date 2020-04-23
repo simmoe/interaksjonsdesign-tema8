@@ -10,6 +10,9 @@
     {#if content.text}
         <h2>{@html content.text}</h2>
     {/if}
+    {#if content.code}
+        <pre><code>{@html content.code}</code></pre>
+    {/if}
     {#if content.img}
         <img src={content.img} alt='her er jeg'>
     {/if}
@@ -39,6 +42,9 @@
     }
     h1, h2{
         word-wrap: break-word;
+    }
+    code{
+        font-size:1.5rem;
     }
 
     :global(li){
