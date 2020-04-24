@@ -12,7 +12,7 @@ const showQuote = (quote, div) => {
 
 const filterQuotes = () => {
     let filtered = Shakespeare.phrases.filter(
-        quote => quote.includes(inp.value)
+        phrase => phrase.toLowerCase().includes(inp.value)
     )
     quotes.innerHTML = ''
     filtered.map( quote => showQuote(quote, quotes))
