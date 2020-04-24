@@ -1,0 +1,37 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 10vh 90vh;
+    padding:.6rem;
+    gap:.6rem;
+}
+input{
+    padding:.6rem;
+}
+#quotes{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+    align-items:flex-start;
+    gap:.6rem;
+}
+article{
+    background-color:#aaa;
+    padding:.6rem; 
+    height:100px;
+    display:grid;
+    place-items:center;
+    box-shadow: 0 0 8px 2px lightgray;
+    color:#333;
+}
+
