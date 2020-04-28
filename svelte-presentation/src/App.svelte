@@ -1,6 +1,6 @@
 <script>
 	import Slide from './Slide.svelte'
-	import { words } from './content-day4'
+	import { words } from './content-day4.js'
 
 	let pos = 0
 
