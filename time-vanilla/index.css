@@ -22,7 +22,6 @@ main {
     border-radius:50%;
     display:grid;
     place-items:center;
-    border:1px solid gray;
     transition:.5s ease;
 }
 
@@ -31,7 +30,8 @@ main {
     width:30vw;
     background-color: #4285F4;
     display:grid;
-    place-items:center;
+    justify-content:center;
+    align-items:center;
     position:absolute;
     top:0;
     right:0;
