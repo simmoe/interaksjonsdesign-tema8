@@ -22,5 +22,29 @@ main {
     border-radius:50%;
     display:grid;
     place-items:center;
+    border:1px solid gray;
     transition:.5s ease;
+}
+
+#alarm{
+    height:100vh;
+    width:30vw;
+    background-color: #4285F4;
+    display:grid;
+    place-items:center;
+    position:absolute;
+    top:0;
+    right:0;
+    transform:translateX(30vw);
+    transition:.6s ease all;
+}
+#showAlarm{
+    position:absolute;
+    bottom:2rem;
+    left:2rem;
+    background:white;
+    padding:.4rem;
+    border-radius:1rem;
+    outline:none;
+    cursor: pointer;
 }
