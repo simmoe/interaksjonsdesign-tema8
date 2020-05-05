@@ -2,10 +2,9 @@
 import Activity from './components/Activity.svelte'
 let activity = {} 
 let show = false
-let type = 'recreational'
 const getActivity = () => {
 	show = false
-	fetch('https://www.boredapi.com/api/activity?type=' + type)
+	fetch(`https://www.boredapi.com/api/activity?`)
 		.then( res => res.json() )
 			.then( json => {
 				activity = json
@@ -16,7 +15,6 @@ const getActivity = () => {
 
 <main>
 	<button on:click={getActivity}>hit me</button>
-	<input type="text" bind:value={type}>
 	{#if show}
 		<Activity {activity} />
 	{:else}

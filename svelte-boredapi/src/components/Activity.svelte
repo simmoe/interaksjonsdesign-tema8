@@ -8,7 +8,7 @@
     <p>{activity.type}</p>
     <p>{activity.accessibility}</p>
     <p>{activity.price}</p>
-    <p>{activity.participants}</p>
+    <p>Participants: {activity.participants}</p>
     <p>{activity.link}</p>
 </div>
 

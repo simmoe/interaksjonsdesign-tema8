@@ -2,7 +2,7 @@
 	import Datamuse from './components/Datamuse.svelte'
 	let words = ''
 	const hei = event => {
-		event.target.style.backgroundColor = 'green'
+		event.target.style.border = '1px solid #4285F4'
 	}
 </script>
 
