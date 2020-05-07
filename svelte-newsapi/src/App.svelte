@@ -1,5 +1,5 @@
 <script>
-	const api_key = 'ed87ebff01bb4f5998eed5fb8a0aba89'
+	const api_key = 'KYeoBVBY3HocgSJja8c1XEOK7h5YHiihs'
 	let q = ''
 	let article
 
@@ -12,6 +12,10 @@
 				})
 	}
 
+	//lets get an article to start with
+	q = 'tomatoes'
+	getNews()
+
 </script>
 
 <main>
@@ -22,9 +26,11 @@
 
 {#if article}
 <a href="{article.url}">
-	<div class="article">
-		<h1>{ article.title }</h1>
-		<p>{article.description}</p>
+	<div class="article" style='background-image:url({article.urlToImage})'>
+		<div>		
+			<h1>{ article.title }</h1>
+			<p>{article.description}</p>
+		</div>
 	</div>
 </a>
 {:else}
@@ -54,9 +60,28 @@
 		padding: 0 20vw 0 20vw;
 	}
 	.article{
-		width:40vw;
+		width:60vw;
 		height:40vh;
+		display:grid;
+		place-items:center;
 		background-color:#eee;
-		padding:2rem;
+		padding:1rem;
+		background-size: cover;
+		overflow: scroll;
+	}
+	.article > div{
+		background-color:rgba(255,255,255,.8);
+		padding:1rem;
+		border-radius:.6rem;
+		transition:1s all ease;
+		height:100%;
+	}
+	.article > div:hover{
+		border-radius:0;
+		background-color:rgba(255,255,255,1);
+		transform:scale(20%)
+	}
+	main a {
+		text-decoration:none;
 	}
 </style>
