@@ -1,5 +1,6 @@
 <script>
-	const api_key = 'KYeoBVBY3HocgSJja8c1XEOK7h5YHiihs'
+	import {apikeys} from '/Users/simo018/Documents/GitHub/00api_keys/apikeys.js'
+	const api_key = apikeys.worldnews.api_key
 	let q = ''
 	let article
 
@@ -20,7 +21,7 @@
 
 <main>
 <header>
-	<input placeholder="type to search" type="text" bind:value={q}>
+	<input placeholder="type to search" type="text" bind:value={q} on:keydown={ key => key.key == 'Enter' ? getNews() : '' }>
 	<button on:click={getNews}>ok</button>
 </header>
 
