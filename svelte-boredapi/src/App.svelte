@@ -13,6 +13,8 @@ const getActivity = () => {
 }
 </script>
 
+
+
 <main>
 	<button on:click={getActivity}>hit me</button>
 	{#if show}
