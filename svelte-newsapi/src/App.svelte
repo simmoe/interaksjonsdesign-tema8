@@ -21,7 +21,12 @@
 
 <main>
 <header>
-	<input placeholder="type to search" type="text" bind:value={q} on:keydown={ key => key.key == 'Enter' ? getNews() : '' }>
+	<input 
+		placeholder="type to search" 
+		bind:value={q} 
+		on:keydown={ key => key.key == 'Enter' ? getNews() : '' }
+		on:click={ e => e.target.value=''}
+		>
 	<button on:click={getNews}>ok</button>
 </header>
 
@@ -66,21 +71,20 @@
 		display:grid;
 		place-items:center;
 		background-color:#eee;
-		padding:1rem;
 		background-size: cover;
 		overflow: scroll;
+		padding:1rem;
 	}
 	.article > div{
 		background-color:rgba(255,255,255,.8);
 		padding:1rem;
 		border-radius:.6rem;
-		transition:1s all ease;
+		transition:.5s all ease;
 		height:100%;
 	}
 	.article > div:hover{
 		border-radius:0;
 		background-color:rgba(255,255,255,1);
-		transform:scale(20%)
 	}
 	main a {
 		text-decoration:none;
