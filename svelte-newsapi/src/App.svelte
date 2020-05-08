@@ -1,92 +1,77 @@
 <script>
 	import {apikeys} from '/Users/simo018/Documents/GitHub/00api_keys/apikeys.js'
 	const api_key = apikeys.worldnews.api_key
-	let q = ''
+
+	let q = 'asteroid'
 	let article
 
 	const getNews = () => {
 		fetch(`https://newsapi.org/v2/everything?q=${q}&apiKey=${api_key}`)
-			.then( res => res.json() )
-				.then( json => {
-					console.log(json.articles[0])
-					article = json.articles[0]
-				})
+		.then( res => res.json()).then( json => {article = json.articles[0]})
 	}
-
-	//lets get an article to start with
-	q = 'tomatoes'
-	getNews()
-
 </script>
 
 <main>
-<header>
-	<input 
-		placeholder="type to search" 
-		bind:value={q} 
-		on:keydown={ key => key.key == 'Enter' ? getNews() : '' }
-		on:click={ e => e.target.value=''}
-		>
-	<button on:click={getNews}>ok</button>
-</header>
-
-{#if article}
-<a href="{article.url}">
-	<div class="article" style='background-image:url({article.urlToImage})'>
-		<div>		
-			<h1>{ article.title }</h1>
-			<p>{article.description}</p>
+	<header>
+		<input placeholder="type to search" bind:value={q}>
+		<button on:click={getNews}>ok</button>
+	</header>
+	{#if article}
+		<div class="article">
+			<div class='text'>		
+				<a href="{article.url}"><h1>{ article.title }</h1></a>
+				<p>{article.description}</p>
+			</div>
+			<img src="{article.urlToImage}" alt="{q}">
 		</div>
-	</div>
-</a>
-{:else}
-	<h2>Skriv noe og trykk ok..</h2>
-{/if}
-
+	{:else}
+		<h2>Skriv noe og trykk enter..</h2>
+	{/if}
 </main>
 
 <style>
 	:global(body, html){
 		margin:0;
-		padding:0;
+		padding: 0;
 	}
 	:global(*){
 		box-sizing:border-box;
 	}
 	main{
 		display:grid;
-		place-items:center;
-		height:100%;
+		grid-template-rows: 1fr 8fr 4fr;
+		gap:1rem;
+		padding: 10vh 20vw 0 20vw;
 	}
-	header{
-		position:absolute;
-		top:2rem;
-		width:100%;
-		display:grid;
-		padding: 0 20vw 0 20vw;
-	}
+
 	.article{
-		width:60vw;
-		height:40vh;
 		display:grid;
-		place-items:center;
+		grid-template-columns: 6fr 4fr;
 		background-color:#eee;
-		background-size: cover;
-		overflow: scroll;
+	}
+	.text {
 		padding:1rem;
 	}
-	.article > div{
-		background-color:rgba(255,255,255,.8);
-		padding:1rem;
-		border-radius:.6rem;
-		transition:.5s all ease;
+	.article > img {
+		width:100%;
 		height:100%;
+		object-fit: cover;
+		object-position: top center;
 	}
-	.article > div:hover{
-		border-radius:0;
-		background-color:rgba(255,255,255,1);
+	a {
+		color:black;
 	}
-	main a {
-		text-decoration:none;
+	input{
+		outline:none;
+	}
+	@media (max-width:1000px){
+		main{
+			padding: 5vh 5vw 0 5vw;
+			grid-template-rows: 2fr 8fr;
+		}
+		.article{
+			grid-template-columns:1fr;
+			grid-template-rows:1fr 1fr;
+		}
 	}
 </style>
