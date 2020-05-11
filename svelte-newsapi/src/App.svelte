@@ -30,10 +30,6 @@
 </main>
 
 <style>
-	:global(body, html){
-		margin:0;
-		padding: 0;
-	}
 	:global(*){
 		box-sizing:border-box;
 	}
@@ -43,7 +39,6 @@
 		gap:1rem;
 		padding: 10vh 20vw 0 20vw;
 	}
-
 	.article{
 		display:grid;
 		grid-template-columns: 6fr 4fr;
