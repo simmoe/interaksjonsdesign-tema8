@@ -10,7 +10,8 @@ npm install
 npm run make 
 ```
 
-<img src='./public/assets/is.png' >
+<img src='./public/assets/is.png' style='height:100px'>
+<img src='./public/assets/barn.webp' style='height:100px'>
 
 
 ## idé og pseudokode
