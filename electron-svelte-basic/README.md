@@ -1,6 +1,10 @@
 # Foreldre kontroll: kan jeg få is?
 En app der styrer barneoppdragelsen for dig mens du feirer nationaldagen og koser dig 
 
+OBS: desverre er det ikke plass på github til å laste opp selve zip filen med appen. 
+
+<img src='./public/assets/is.png' >
+
 ## Electron basics 
 
 Get up and running with 💪 Svelte & ⚡ Electron. 
