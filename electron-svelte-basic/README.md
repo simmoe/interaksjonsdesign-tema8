@@ -3,21 +3,16 @@ En app der styrer barneoppdragelsen for dig mens du feirer nationaldagen og kose
 
 OBS: desverre er det ikke plass på github til å laste opp selve zip filen med appen. 
 
+## For å produsere appen selv:
+
+```
+npm install
+npm run make 
+```
+
 <img src='./public/assets/is.png' >
 
-## Electron basics 
 
-Get up and running with 💪 Svelte & ⚡ Electron. 
-
-## Usage
-
-```
-git clone https://github.com/codediodeio/electron-forge-svelte.git my-app
-cd my-app
-
-npm install
-npm start
-```
 ## idé og pseudokode
 Jeg vil lage en app, som forhindrer norske barn i å spise for mye is på 17 mai. Det skal være et stort bilde av en is......
 
