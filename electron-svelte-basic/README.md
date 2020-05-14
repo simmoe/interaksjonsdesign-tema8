@@ -1,4 +1,4 @@
-#Foreldre kontroll: kan jeg få is?
+# Foreldre kontroll: kan jeg få is?
 En app der styrer barneoppdragelsen for dig mens du feirer nationaldagen og koser dig 
 
 ## Electron basics 
