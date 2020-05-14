@@ -1,6 +1,6 @@
 {
   "name": "svelte-electron-forge",
-  "productName": "svelte-electron-forge",
+  "productName": "Foreldrekontroll 17. Maj",
   "version": "1.0.0",
   "description": "Svelte + Electron Forge",
   "main": "src/index.js",
@@ -19,7 +19,9 @@
   "license": "MIT",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "icon": "public/AppIcon.icns"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",

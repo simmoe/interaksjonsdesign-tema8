@@ -405,7 +405,7 @@ var app = (function () {
     			h1 = element("h1");
     			t = text(/*beskjed*/ ctx[1]);
     			attr_dev(h1, "class", "svelte-tmpki8");
-    			add_location(h1, file, 41, 2, 852);
+    			add_location(h1, file, 41, 2, 851);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -447,9 +447,9 @@ var app = (function () {
     			if (img.src !== (img_src_value = "./assets/is.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "iskrem");
     			attr_dev(img, "class", "svelte-tmpki8");
-    			add_location(img, file, 39, 1, 773);
+    			add_location(img, file, 39, 1, 772);
     			attr_dev(main, "class", "svelte-tmpki8");
-    			add_location(main, file, 38, 0, 765);
+    			add_location(main, file, 38, 0, 764);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
