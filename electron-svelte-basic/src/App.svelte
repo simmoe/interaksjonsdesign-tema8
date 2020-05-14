@@ -34,7 +34,6 @@
 			alarm = new Date(new Date().getTime() + foreldreKontroll * 60000)
 		}, 5000)
 	}
-
 </script>
 
 <main>
