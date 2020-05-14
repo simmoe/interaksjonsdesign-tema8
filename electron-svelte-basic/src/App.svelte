@@ -12,8 +12,8 @@
 
 	let kanjegfaais = true
 	let visbeskjed = false
+
 	$: beskjed = kanjegfaais ? 'Ja, du kan få is' : 'Nei, og nå må du vente endda lengere'
-	
 	$: kanjegfaais = alarm < $time ? true : false
 
 	let foreldreKontroll = 30
