@@ -1,4 +1,7 @@
-# Electron basics 
+#Foreldre kontroll: kan jeg få is?
+En app der styrer barneoppdragelsen for dig mens du feirer nationaldagen og koser dig 
+
+## Electron basics 
 
 Get up and running with 💪 Svelte & ⚡ Electron. 
 
