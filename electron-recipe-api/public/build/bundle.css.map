@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../../App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\timport {apikeys} from '/Users/simo018/Documents/GitHub/00api_keys/apikeys.js'\n\n\tlet ingredients = []\n\tlet recipe\n\t$: console.log(ingredients.toString())\n\tconst apikey = apikeys.spoonacular.api_key\n\n\tconst getRecipes = () => {\n\t\tfetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${apikey}&ingredients=${ingredients}&number=1`)\n\t\t\t.then(res=>res.json())\n\t\t\t.then(json => recipe=json[0])\n\t}\n\tconst add = (e) => {\n\t\te.target.checked ? ingredients = [...ingredients, e.target.id] : ingredients.filter(i => i!= e.target.id)\n\t}\n</script>\n\n<main>\n\t<h1>Hello cookie!</h1>\n\t<h3>Whats in the fridge?</h3>\n\t<label for=\"sugar\">sukker</label>\n\t<input id='+sugar' type=\"checkbox\" on:click={add}>\n\t<label for=\"flour\">mel</label>\n\t<input id='+flour' type=\"checkbox\" on:click={add}>\n\t<label for=\"apples\">epler</label>\n\t<input id='+apples' type=\"checkbox\" on:click={add}>\n\t<hr>\n\t<button on:click={getRecipes}>finn oppskrift</button>\n\t<hr>\n\t{#if recipe}\n\t\t<h1>{recipe.title}</h1>\n\t\t<img src=\"{recipe.image}\" alt=\"{recipe.title}\">\n\t{/if}\n\n</main>\n\n<style>\n\tmain {\n\t\ttext-align: center;\n\t\tpadding: 1em;\n\t\tmax-width: 240px;\n\t\tmargin: 0 auto;\n\t}\n\th1 {\n\t\tcolor: #ff3e00;\n\t\ttext-transform: uppercase;\n\t\tfont-size: 4em;\n\t\tfont-weight: 100;\n\t}\n\t@media (min-width: 640px) {\n\t\tmain {\n\t\t\tmax-width: none;\n\t\t}\n\t}\n</style>"
+  ],
+  "names": [],
+  "mappings": "AAsCC,IAAI,cAAC,CAAC,AACL,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,GAAG,CACZ,SAAS,CAAE,KAAK,CAChB,MAAM,CAAE,CAAC,CAAC,IAAI,AACf,CAAC,AACD,EAAE,cAAC,CAAC,AACH,KAAK,CAAE,OAAO,CACd,cAAc,CAAE,SAAS,CACzB,SAAS,CAAE,GAAG,CACd,WAAW,CAAE,GAAG,AACjB,CAAC,AACD,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAC1B,IAAI,cAAC,CAAC,AACL,SAAS,CAAE,IAAI,AAChB,CAAC,AACF,CAAC"
+}
