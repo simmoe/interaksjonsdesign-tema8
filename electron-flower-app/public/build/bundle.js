@@ -893,17 +893,17 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
+    	child_ctx[7] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
+    	child_ctx[7] = list[i];
     	return child_ctx;
     }
 
-    // (55:1) {:else}
+    // (53:1) {:else}
     function create_else_block_1(ctx) {
     	let h3;
 
@@ -911,7 +911,7 @@ var app = (function () {
     		c: function create() {
     			h3 = element("h3");
     			h3.textContent = "No watering needed";
-    			add_location(h3, file$1, 55, 2, 1536);
+    			add_location(h3, file$1, 53, 2, 1543);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -925,20 +925,20 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(55:1) {:else}",
+    		source: "(53:1) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (53:1) {#each needwater as plant}
+    // (51:1) {#each needwater as plant}
     function create_each_block_1(ctx) {
     	let current;
 
     	const plant = new Plant({
     			props: {
-    				plant: /*plant*/ ctx[8],
+    				plant: /*plant*/ ctx[7],
     				remove: /*remove*/ ctx[3],
     				day: /*day*/ ctx[2]
     			},
@@ -955,7 +955,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const plant_changes = {};
-    			if (dirty & /*needwater*/ 1) plant_changes.plant = /*plant*/ ctx[8];
+    			if (dirty & /*needwater*/ 1) plant_changes.plant = /*plant*/ ctx[7];
     			if (dirty & /*day*/ 4) plant_changes.day = /*day*/ ctx[2];
     			plant.$set(plant_changes);
     		},
@@ -977,14 +977,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(53:1) {#each needwater as plant}",
+    		source: "(51:1) {#each needwater as plant}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (62:1) {:else}
+    // (60:1) {:else}
     function create_else_block(ctx) {
     	let h3;
 
@@ -992,7 +992,7 @@ var app = (function () {
     		c: function create() {
     			h3 = element("h3");
     			h3.textContent = "No plants";
-    			add_location(h3, file$1, 62, 2, 1663);
+    			add_location(h3, file$1, 60, 2, 1670);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -1006,20 +1006,20 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(62:1) {:else}",
+    		source: "(60:1) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (60:1) {#each garden as plant}
+    // (58:1) {#each garden as plant}
     function create_each_block$1(ctx) {
     	let current;
 
     	const plant = new Plant({
     			props: {
-    				plant: /*plant*/ ctx[8],
+    				plant: /*plant*/ ctx[7],
     				day: /*day*/ ctx[2]
     			},
     			$$inline: true
@@ -1035,7 +1035,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const plant_changes = {};
-    			if (dirty & /*garden*/ 2) plant_changes.plant = /*plant*/ ctx[8];
+    			if (dirty & /*garden*/ 2) plant_changes.plant = /*plant*/ ctx[7];
     			if (dirty & /*day*/ 4) plant_changes.day = /*day*/ ctx[2];
     			plant.$set(plant_changes);
     		},
@@ -1057,7 +1057,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(60:1) {#each garden as plant}",
+    		source: "(58:1) {#each garden as plant}",
     		ctx
     	});
 
@@ -1136,13 +1136,13 @@ var app = (function () {
     				each1_else.c();
     			}
 
-    			add_location(h1, file$1, 49, 0, 1421);
+    			add_location(h1, file$1, 47, 0, 1428);
     			attr_dev(div0, "class", "needs svelte-1qnlvlt");
-    			add_location(div0, file$1, 51, 0, 1443);
+    			add_location(div0, file$1, 49, 0, 1450);
     			attr_dev(div1, "class", "garden svelte-1qnlvlt");
-    			add_location(div1, file$1, 58, 0, 1580);
+    			add_location(div1, file$1, 56, 0, 1587);
     			attr_dev(main, "class", "svelte-1qnlvlt");
-    			add_location(main, file$1, 50, 0, 1436);
+    			add_location(main, file$1, 48, 0, 1443);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1319,17 +1319,13 @@ var app = (function () {
     	//set a variable, day, to the correct index in the weekdays array 
     	let day = days[new Date().getDay()];
 
-    	let i = new Date().getDay();
-
     	//make a function that checks whether plants need water
     	const checkPlants = () => {
     		//whenever the day changes (once every 24 hours) 
     		//check all plants and set then to need watering if they include the new day 
-    		i++;
-
-    		if (day != days[i]) {
-    			console.log("new day");
-    			$$invalidate(2, day = days[i]);
+    		if (day != days[new Date().getDay()]) {
+    			$$invalidate(2, day = days[new Date().getDay()]);
+    			console.log("new day ", day);
 
     			allPlants.map(p => {
     				if (p.days.includes(day)) p.needwater = true;
@@ -1364,7 +1360,6 @@ var app = (function () {
     		allPlants,
     		days,
     		day,
-    		i,
     		checkPlants,
     		remove,
     		Date,
@@ -1377,7 +1372,6 @@ var app = (function () {
     		if ("garden" in $$props) $$invalidate(1, garden = $$props.garden);
     		if ("allPlants" in $$props) allPlants = $$props.allPlants;
     		if ("day" in $$props) $$invalidate(2, day = $$props.day);
-    		if ("i" in $$props) i = $$props.i;
     	};
 
     	if ($$props && "$$inject" in $$props) {
