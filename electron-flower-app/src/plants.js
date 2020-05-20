@@ -16,7 +16,7 @@ export const plants = [
     },
     {
         name:'flower 4',
-        days: ['monday', 'sunday'],
+        days: ['monday', 'saturday', 'sunday'],
         needwater: false,
     },
 ]

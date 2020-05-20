@@ -12,24 +12,32 @@
 	const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
 
 	//set a variable, day, to the correct index in the weekdays array 
-	var day = days[new Date().getDay()]	
+	let day = days[new Date().getDay()]
+	let i = new Date().getDay()
 
 	//make a function that checks whether plants need water
 	const checkPlants = () => {
+		//whenever the day changes (once every 24 hours) 
+		//check all plants and set then to need watering if they include the new day 
+		i++
+		if(day != days[i]){
+			console.log('new day')
+			day = days[i]
+			allPlants.map( p => { if(p.days.includes(day)) p.needwater = true } ) 
+		}
 		//needwater includes all plants that have not been watered (even if it was on another day)
 		needwater = allPlants.filter( p => p.needwater)
 		//garden includes all plants that don't need water
 		garden = allPlants.filter( p => !p.needwater)
 	}
 
-	//check the plants current status
+	//check the plants current status on start
 	checkPlants()
  
 	//set an interval that check plants every minute
-	setInterval(checkPlants, 1000*60)
+	setInterval(checkPlants, 20000)
 
-
-	//when a plant has beedn watered 
+	//when a plant has been watered, we can remove it 
 	const remove = plant => {
 		plant.needwater = false
 		needwater = needwater.filter( p => p.name != plant.name)
