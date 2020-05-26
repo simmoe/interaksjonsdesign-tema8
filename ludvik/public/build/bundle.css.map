@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../../App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\timport { info } from './data.js'\n\tlet map\n\n\tconst init = () => {\n\t\tmapboxgl.accessToken = 'pk.eyJ1IjoibHVkdmlra3ZhbHN2aWsiLCJhIjoiY2s5NGFnOG45MDVjMzNvbnhoanBzb3BoNCJ9.UyR6o9v82LFpr3naB6_YLg';\n\t\tmap = new mapboxgl.Map({\n\t\t\tcontainer: 'map',\n\t\t\tstyle: 'mapbox://styles/mapbox/satellite-v9',\n\t\t\tzoom: 2.5,\n\t\t\tcenter: [6.856797, 66.597289]\n\t\t});\n\t\tmap.addControl(\n\t\t\tnew mapboxgl.GeolocateControl({\n\t\t\t\tpositionOptions: {\n\t\t\t\t\tenableHighAccuracy: true  \n\t\t\t\t}, \n\t\t\t\ttrackUserLocation: true\n\t\t\t})\n\t\t\t);\n\t\t\tvar nav = new mapboxgl.NavigationControl()\n\t\t\tmap.addControl(nav, 'bottom-right')\n\t}\n\n\tlet region \n\n\t$: console.log(region)\n\tconst flySor = () => {\n\t\tregion = info[0]\n\t\tmap.flyTo({\n\t\t\tcenter: [6.282324, 60.254881],\n\t\t\tzoom: 4.65\n\t\t})\n\t}\n\n\tconst flyNord = () => {\n\t\tregion = info[1]\n\t\tmap.flyTo({\n\t\t\tcenter: [13.071520 , 68.925976],\n\t\t\tzoom: 3.65\n\t\t})\t\n\t}\n\n\n</script>\n\n<svelte:head>\n\t<script on:load={init} src='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.js'></script>\n\t<script src=\"https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js\">\n\t</script>\n\t<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css' rel='stylesheet' />\n\t<link rel=\"stylesheet\"\n\t\thref=\"https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css\"\n\t\ttype=\"text/css\" />\n</svelte:head>\n\n<main>\n\t<div>\n\t\t<div id='map' />\n\t\t<button on:click={flySor}>sør</button>\n\t\t<button on:click={flyNord}>nord</button>\n\t</div>\n\t{#if region}\n\t\t<div class=\"region\">\n\t\t\t<h2>{region.Region}</h2>\n\t\t\t<p>{region.Tidsrom}</p>\n\t\t\t<p>{region.Minstemål}</p>\n\t\t</div>\n\t{:else}\n\t\t<h2>Klikk på knappene for å vise info</h2>\n\t{/if}\n\n</main>\n\n<style>\n\tmain {\n\t\twidth: 100vw;\n\t\theight: 100vh;\n\t\tdisplay: grid;\n\t\tplace-items: center;\n\t}\n\n\t#map {\n\t\twidth: 60vw;\n\t\theight: 60vh;\n\t}\n\t#map{\n\t\tborder-radius:4rem;\n\t}\n</style>"
+  ],
+  "names": [],
+  "mappings": "AA2EC,IAAI,cAAC,CAAC,AACL,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,KAAK,CACb,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,MAAM,AACpB,CAAC,AAED,IAAI,cAAC,CAAC,AACL,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,AACb,CAAC,AACD,kBAAI,CAAC,AACJ,cAAc,IAAI,AACnB,CAAC"
+}
